@@ -6,6 +6,23 @@ You connect it to your own Fileee server: enter its address, set it up if it's n
 
 Desktops get a sidebar, a menu bar with shortcuts, right-click menus, file and folder dialogs, drag and drop, and the web app's keyboard shortcuts (⌘A, Enter, F2, M, S, Delete, Esc). Phones get the system tab bar, native headers, action sheets and long press to select.
 
+## Screenshots
+
+<p>
+  <img src="docs/screenshots/ios-home.png" width="19%" alt="Home on iPhone: storages, starred and recent files">
+  <img src="docs/screenshots/ios-photos.png" width="19%" alt="A folder of photos as a grid on iPhone">
+  <img src="docs/screenshots/ios-folder.png" width="19%" alt="A folder as a list with thumbnails on iPhone">
+  <img src="docs/screenshots/ios-preview.png" width="19%" alt="A photo's preview and details on iPhone">
+  <img src="docs/screenshots/ios-dark.png" width="19%" alt="A folder as a grid on iPhone in dark mode">
+</p>
+
+<p>
+  <img src="docs/screenshots/desktop-home.png" width="49%" alt="Home on macOS with the sidebar">
+  <img src="docs/screenshots/desktop-photos.png" width="49%" alt="A folder of photos as a grid on macOS">
+  <img src="docs/screenshots/desktop-search.png" width="49%" alt="Search results with filters on macOS">
+  <img src="docs/screenshots/desktop-dark.png" width="49%" alt="A selected photo's details panel on macOS in dark mode">
+</p>
+
 ## Develop
 
 You need the `nsh` CLI 0.5 (`brew install longbridge/tap/nsh`, or see [Installation](https://nsh.dev/docs/installation)) and Rust (`rustup`). The crate's `nsh-core` and `nsh-base` versions in `Cargo.toml` must match the CLI's. From this folder:
