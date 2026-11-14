@@ -25,7 +25,7 @@ Desktops get a sidebar, a menu bar with shortcuts, right-click menus, file and f
 
 ## Develop
 
-You need the `nsh` CLI 0.5 (`brew install longbridge/tap/nsh`, or see [Installation](https://nsh.dev/docs/installation)) and Rust (`rustup`). The crate's `nsh-core` and `nsh-base` versions in `Cargo.toml` must match the CLI's. From this folder:
+You need the `nsh` CLI 0.5 (`brew install longbridge/tap/nsh`, or see [Installation](https://nsh.dev/docs/installation)) and Rust (`rustup`). The crate's `nsh-core` and `nsh-base` versions in `native/Cargo.toml` must match the CLI's. From the `app/` folder:
 
 ```bash
 nsh run                    # desktop window; TSX reloads on save, Rust edits rebuild
@@ -43,12 +43,15 @@ Each platform builds the Rust crate with its own tools:
 
 ## Layout
 
-- `App.tsx`: the entry. Connect, set up or sign in, then the dashboard.
-- `lib/`: the API client and session (`api.ts`), navigation, uploads, previews (`process.ts`) and shared actions.
-- `components/`: the app's UI pieces. NSH's `nsh/base` gives behavior only; the look lives here.
-- `screens/`: one file per page of the navigation stack.
-- `src/lib.rs`: the native module `fileee/native`: file and folder dialogs, reading local files in parts, image thumbnails and EXIF, SHA-256.
-- `components/thumbnailer-host.tsx`: a hidden web view of the server's `/thumbnailer` page, which decodes PDFs and video with the browser engine's decoders.
+`app/` is the NSH app: everything it imports ships with it, so it all lives under that folder.
+
+- `app/App.tsx`: the entry. Connect, set up or sign in, then the dashboard.
+- `app/lib/`: the API client and session (`api.ts`), navigation, uploads, previews (`process.ts`) and shared actions.
+- `app/components/`: the app's UI pieces. NSH's `nsh/base` gives behavior only; the look lives here.
+- `app/screens/`: one file per page of the navigation stack.
+- `app/assets/`: icons. `app/test-fixtures/`: files the tests drop in.
+- `native/`: the Rust crate (`nsh.json` `"rust"`), the native module `fileee/native`: file and folder dialogs, reading local files in parts, image thumbnails and EXIF, SHA-256.
+- `app/components/thumbnailer-host.tsx`: a hidden web view of the server's `/thumbnailer` page, which decodes PDFs and video with the browser engine's decoders.
 
 ## Known limits
 
